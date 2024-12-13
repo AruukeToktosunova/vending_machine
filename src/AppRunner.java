@@ -11,9 +11,12 @@ public class AppRunner {
 
     private final CoinAcceptor coinAcceptor;
 
+    private final int cardPayment;
+
     private static boolean isExit = false;
 
-    private AppRunner() {
+    private AppRunner(int cardPayment) {
+        this.cardPayment = cardPayment;
         products.addAll(new Product[]{
                 new Water(ActionLetter.B, 20),
                 new CocaCola(ActionLetter.C, 50),
@@ -26,7 +29,7 @@ public class AppRunner {
     }
 
     public static void run() {
-        AppRunner app = new AppRunner();
+        AppRunner app = new AppRunner(200);
         while (!isExit) {
             app.startSimulation();
         }
