@@ -1,6 +1,6 @@
 package util;
 
 public interface PaymentMethod {
-    boolean pay(int amount);
+    boolean pay(double amount);
     int getBalance();
 }
